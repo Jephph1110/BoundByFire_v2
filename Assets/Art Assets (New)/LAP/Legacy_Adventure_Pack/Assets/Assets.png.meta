@@ -43,7 +43,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -7646,8 +7646,8 @@ TextureImporter:
       Assets_172: 146201894
       Assets_304: 499693264
       Assets_292: -217869628
-      Assets_15: 1933595864
       Assets_188: -1553556270
+      Assets_15: 1933595864
       Assets_244: 186759090
       Assets_92: -555137592
       Assets_13: -892501136
