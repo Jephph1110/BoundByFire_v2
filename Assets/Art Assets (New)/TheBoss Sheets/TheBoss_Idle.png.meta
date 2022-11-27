@@ -1,40 +1,7 @@
 fileFormatVersion: 2
-guid: db6c903789b97a841aeab9ab27f2938b
+guid: 79743ec36cacf4540bcad80f1b3176e8
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -837640959294115643
-    second: GarrettIdle_right_0
-  - first:
-      213: -8335836704092288950
-    second: GarrettIdle_right_1
-  - first:
-      213: 5205614054051929033
-    second: GarrettIdle_right_2
-  - first:
-      213: -2567996193937897699
-    second: GarrettIdle_right_3
-  - first:
-      213: -2267104050514386257
-    second: GarrettIdle_right_4
-  - first:
-      213: -6192693841871090502
-    second: GarrettIdle_right_5
-  - first:
-      213: -4754194030428066053
-    second: GarrettIdle_right_6
-  - first:
-      213: 5089012817390500273
-    second: GarrettIdle_right_7
-  - first:
-      213: 7064798071378619848
-    second: GarrettIdle_right_8
-  - first:
-      213: -2943318527031402799
-    second: GarrettIdle_right_9
-  - first:
-      213: -6065011301355274848
-    second: GarrettIdle_right_10
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -96,7 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -123,30 +90,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -162,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GarrettIdle_right_0
+      name: TheBoss_Idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -176,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c0f4fb4cf91064f0800000000000000
-      internalID: -837640959294115643
+      spriteID: da5e4ff99acdaca40847aeb6e0eeeb0c
+      internalID: -153536146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GarrettIdle_right_1
+      name: TheBoss_Idle_1
       rect:
         serializedVersion: 2
         x: 64
@@ -197,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a488aeacea8215c80800000000000000
-      internalID: -8335836704092288950
+      spriteID: c1ccd9c470deb3d4fae94af7477d692d
+      internalID: 896958260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GarrettIdle_right_2
+      name: TheBoss_Idle_2
       rect:
         serializedVersion: 2
         x: 128
@@ -218,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cbdb81d66e0e3840800000000000000
-      internalID: 5205614054051929033
+      spriteID: 324cd02e23eb7e84e91d60b0ce5c477a
+      internalID: 723517263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GarrettIdle_right_3
+      name: TheBoss_Idle_3
       rect:
         serializedVersion: 2
         x: 192
@@ -239,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d17c6c34115ac5cd0800000000000000
-      internalID: -2567996193937897699
+      spriteID: 8ced75d9891edd348898f61288f5f9ef
+      internalID: -1530796656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GarrettIdle_right_4
+      name: TheBoss_Idle_4
       rect:
         serializedVersion: 2
         x: 256
@@ -260,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa2ad30b0e0a980e0800000000000000
-      internalID: -2267104050514386257
+      spriteID: 29d8f3e349f5eab43b8af07212e281bf
+      internalID: -241399056
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GarrettIdle_right_5
+      name: TheBoss_Idle_5
       rect:
         serializedVersion: 2
         x: 320
@@ -281,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abc4688d2c12f0aa0800000000000000
-      internalID: -6192693841871090502
+      spriteID: 263c13c97a809ab4092d450abb283809
+      internalID: 951169198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GarrettIdle_right_6
+      name: TheBoss_Idle_6
       rect:
         serializedVersion: 2
         x: 384
@@ -302,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfe6d07d7b5b50eb0800000000000000
-      internalID: -4754194030428066053
+      spriteID: 332720ee216f3514f8fec0f8c65c1ae0
+      internalID: 335068314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GarrettIdle_right_7
+      name: TheBoss_Idle_7
       rect:
         serializedVersion: 2
         x: 448
@@ -323,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b978f5d13ecf9640800000000000000
-      internalID: 5089012817390500273
+      spriteID: 53a8aaf71a51b834ebc80e7cc1b4bd6c
+      internalID: -1249617398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GarrettIdle_right_8
+      name: TheBoss_Idle_8
       rect:
         serializedVersion: 2
         x: 512
@@ -344,14 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cd236e3a643b0260800000000000000
-      internalID: 7064798071378619848
+      spriteID: 385eb86f6e713974886b9775f17533bd
+      internalID: 1164642974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GarrettIdle_right_9
+      name: TheBoss_Idle_9
       rect:
         serializedVersion: 2
         x: 576
@@ -365,14 +308,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1de977fd46b3727d0800000000000000
-      internalID: -2943318527031402799
+      spriteID: 5104f332097e33f4995435b0be13bcaa
+      internalID: 928568815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GarrettIdle_right_10
+      name: TheBoss_Idle_10
       rect:
         serializedVersion: 2
         x: 640
@@ -386,8 +329,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ad3dffea50c4dba0800000000000000
-      internalID: -6065011301355274848
+      spriteID: 2e94759f1cb5803459b8c086416689b7
+      internalID: 1022957686
       vertices: []
       indices: 
       edges: []
@@ -403,17 +346,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GarrettIdle_right_6: -4754194030428066053
-      GarrettIdle_right_0: -837640959294115643
-      GarrettIdle_right_5: -6192693841871090502
-      GarrettIdle_right_10: -6065011301355274848
-      GarrettIdle_right_9: -2943318527031402799
-      GarrettIdle_right_2: 5205614054051929033
-      GarrettIdle_right_4: -2267104050514386257
-      GarrettIdle_right_3: -2567996193937897699
-      GarrettIdle_right_8: 7064798071378619848
-      GarrettIdle_right_7: 5089012817390500273
-      GarrettIdle_right_1: -8335836704092288950
+      TheBoss_Idle_9: 928568815
+      TheBoss_Idle_6: 335068314
+      TheBoss_Idle_2: 723517263
+      TheBoss_Idle_8: 1164642974
+      TheBoss_Idle_5: 951169198
+      TheBoss_Idle_4: -241399056
+      TheBoss_Idle_1: 896958260
+      TheBoss_Idle_3: -1530796656
+      TheBoss_Idle_10: 1022957686
+      TheBoss_Idle_0: -153536146
+      TheBoss_Idle_7: -1249617398
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
