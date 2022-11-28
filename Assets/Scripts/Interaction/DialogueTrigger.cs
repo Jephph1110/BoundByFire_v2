@@ -46,17 +46,17 @@ public class DialogueTrigger : MonoBehaviour
             InstantGet();
         }
 
-        if (col.gameObject == NewPlayer.Instance.gameObject && !sleeping && !completed && NewPlayer.Instance.grounded)
+        if (col.gameObject == CharacterController2D.Instance.gameObject && !sleeping && !completed)
         {
             iconAnimator.SetBool("active", true);
             if (autoHit || (Input.GetAxis("Submit") > 0))
             {
                 iconAnimator.SetBool("active", false);
-                if (requiredItem == "" && requiredCoins == 0 || !GameManager.Instance.inventory.ContainsKey(requiredItem) && requiredCoins == 0 || (requiredCoins != 0 && NewPlayer.Instance.coins < requiredCoins))
+                if (requiredItem == "" && requiredCoins == 0 || !GameManager.Instance.inventory.ContainsKey(requiredItem) && requiredCoins == 0 || (requiredCoins != 0 && CharacterController2D.Instance.coins < requiredCoins))
                 {
                     GameManager.Instance.dialogueBoxController.Appear(dialogueStringA, characterName, this, false, audioLinesA, audioChoices, finishTalkingAnimatorBool, finishTalkingActivateObject, finishTalkingActivateObjectString, repeat);
                 }
-                else if (requiredCoins == 0 && GameManager.Instance.inventory.ContainsKey(requiredItem) || (requiredCoins != 0 && NewPlayer.Instance.coins >= requiredCoins))
+                else if (requiredCoins == 0 && GameManager.Instance.inventory.ContainsKey(requiredItem) || (requiredCoins != 0 && CharacterController2D.Instance.coins >= requiredCoins))
                 {
                     if (dialogueStringB != "")
                     {
@@ -78,7 +78,7 @@ public class DialogueTrigger : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject == NewPlayer.Instance.gameObject)
+        if (col.gameObject == CharacterController2D.Instance.gameObject)
         {
             iconAnimator.SetBool("active", false);
             sleeping = completed;
@@ -107,7 +107,7 @@ public class DialogueTrigger : MonoBehaviour
             }
             else
             {
-                NewPlayer.Instance.coins -= requiredCoins;
+                CharacterController2D.Instance.coins -= requiredCoins;
             }
 
             repeat = false;
@@ -125,13 +125,13 @@ public class DialogueTrigger : MonoBehaviour
 
             if (getCoinAmount != 0)
             {
-                NewPlayer.Instance.coins += getCoinAmount;
+                CharacterController2D.Instance.coins += getCoinAmount;
             }
 
-            if (getSound != null)
-            {
-                GameManager.Instance.audioSource.PlayOneShot(getSound);
-            }
+            // if (getSound != null)
+            // {
+            //     GameManager.Instance.audioSource.PlayOneShot(getSound);
+            // }
 
             completed = true;
         }

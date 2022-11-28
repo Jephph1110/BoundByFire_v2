@@ -18,6 +18,17 @@ public class CharacterController2D : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+	
+	[Header ("Inventory")]
+	public float ammo;
+    public int coins;
+    public int health;
+    public int maxHealth;
+    public int maxAmmo;
+
+	[Header ("Properties")]
+	public bool frozen = false;
+	[System.NonSerialized] public bool shooting = false;
 
 	[Header("Events")]
 	[Space]
@@ -29,6 +40,17 @@ public class CharacterController2D : MonoBehaviour
 
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
+
+	    // Singleton instantiation
+    private static CharacterController2D instance;
+    public static CharacterController2D Instance
+    {
+        get
+        {
+            if (instance == null) instance = GameObject.FindObjectOfType<CharacterController2D>();
+            return instance;
+        }
+    }
 
 	private void Awake()
 	{
@@ -132,6 +154,17 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
+	public void Freeze(bool freeze)
+    {
+        //Set all animator params to ensure the player stops running, jumping, etc and simply stands
+        if (freeze)
+        {
+            Vector3 targetVelocity = new Vector2(0f, 0f);
+        }
+
+        frozen = freeze;
+        shooting = false;
+    }
 
 	private void Flip()
 	{
