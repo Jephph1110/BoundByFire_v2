@@ -17,9 +17,11 @@ public class AttackHit : MonoBehaviour
     [SerializeField] private bool isBomb = false; //Is the object a bomb that blows up when touching the player?
     [SerializeField] private int hitPower = 1; 
 
+
     // Use this for initialization
     void Start()
     {
+        parent = GameObject.Find("Garrett(Clone)");
         /*If isBomb = true, we want to be sure the collider is disabled when first launched,
         otherwise it will blow up when touching the object shooting it!*/
         if (isBomb) StartCoroutine(TempColliderDisable());
@@ -71,9 +73,13 @@ public class AttackHit : MonoBehaviour
     //Temporarily disable this collider to ensure bombs can launch from inside enemies without blowing up!
     IEnumerator TempColliderDisable()
     {
+        parent = GameObject.Find("Garrett(Clone)");
+        
         Collider2D collider = GetComponent<Collider2D>();
         collider.enabled = false;
         yield return new WaitForSeconds(startCollisionDelay);
         GetComponent<Collider2D>().enabled = true;
+
+        
     }
 }

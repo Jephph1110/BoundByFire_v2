@@ -22,6 +22,8 @@ public class EnemyBase : MonoBehaviour
     public bool isBomb;
     [SerializeField] bool requirePoundAttack; //Requires the player to use the down attack to hurt
 
+    public GameObject garrettInstance;
+
     void Start()
     {
         recoveryCounter = GetComponent<RecoveryCounter>();
@@ -31,6 +33,8 @@ public class EnemyBase : MonoBehaviour
 
     void Update()
     {
+        garrettInstance = GameObject.Find("Garrett(Clone)");
+
         if (health <= 0)
         {
             Die();
@@ -42,9 +46,9 @@ public class EnemyBase : MonoBehaviour
         //Hit the enemy, causing a damage effect, and decreasing health. Allows for requiring a downward pound attack
         if ((GetComponent<Walker>() != null || GetComponent<Flyer>() != null) && !recoveryCounter.recovering)
         {
-            if (!requirePoundAttack || (requirePoundAttack && NewPlayer.Instance.pounding))
+            if (!requirePoundAttack || (requirePoundAttack && garrettInstance.GetComponent<NewPlayer>().pounding))
             {
-                NewPlayer.Instance.cameraEffects.Shake(100, 1);
+                garrettInstance.GetComponent<NewPlayer>().cameraEffects.Shake(100, 1);
                 health -= hitPower;
                 animator.SetTrigger("hurt");
 
@@ -53,11 +57,11 @@ public class EnemyBase : MonoBehaviour
 
                 //Ensure the enemy and also the player cannot engage in hitting each other for the max recoveryTime for each
                 recoveryCounter.counter = 0;
-                NewPlayer.Instance.recoveryCounter.counter = 0;
+                garrettInstance.GetComponent<NewPlayer>().recoveryCounter.counter = 0;
 
-                if (NewPlayer.Instance.pounding)
+                if (garrettInstance.GetComponent<NewPlayer>().pounding)
                 {
-                    NewPlayer.Instance.PoundEffect();
+                    garrettInstance.GetComponent<NewPlayer>().PoundEffect();
                 }
 
 
@@ -80,19 +84,19 @@ public class EnemyBase : MonoBehaviour
                     flyer.speed.y = flyer.speedEased.y;
                 }
 
-                NewPlayer.Instance.FreezeFrameEffect();
+                garrettInstance.GetComponent<NewPlayer>().FreezeFrameEffect();
             }
         }
     }
 
     public void Die()
     {
-        if (NewPlayer.Instance.pounding)
+        if (garrettInstance.GetComponent<NewPlayer>().pounding)
         {
-            NewPlayer.Instance.PoundEffect();
+            garrettInstance.GetComponent<NewPlayer>().PoundEffect();
         }
 
-        NewPlayer.Instance.cameraEffects.Shake(200, 1);
+        garrettInstance.GetComponent<NewPlayer>().cameraEffects.Shake(200, 1);
         health = 0;
         deathParticles.SetActive(true);
         deathParticles.transform.parent = transform.parent;
