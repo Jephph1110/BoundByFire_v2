@@ -35,16 +35,18 @@ public class Flyer : MonoBehaviour
     [System.NonSerialized] public Vector3 speedEased;
     [SerializeField] private bool shootsBomb;
     [SerializeField] private Vector2 targetOffset = new Vector2(0, 2);
+    public GameObject garrettInstance;
 
     // Use this for initialization
     void Start()
     {
+        garrettInstance = GameObject.Find("Garrett(Clone)");
         enemyBase = GetComponent<EnemyBase>();
         rigidbody2D = GetComponent<Rigidbody2D>();
 
         if (enemyBase.isBomb)
         {
-            lookAtTarget = NewPlayer.Instance.gameObject.transform;
+            lookAtTarget = garrettInstance.gameObject.transform;
         }
 
         speedMultiplier += Random.Range(-maxSpeedDeviation, maxSpeedDeviation);
@@ -60,8 +62,9 @@ public class Flyer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distanceFromPlayer.x = (NewPlayer.Instance.transform.position.x + targetOffset.x) - transform.position.x;
-        distanceFromPlayer.y = (NewPlayer.Instance.transform.position.y + targetOffset.y) - transform.position.y;
+        garrettInstance = GameObject.Find("Garrett(Clone)");
+        distanceFromPlayer.x = (garrettInstance.transform.position.x + targetOffset.x) - transform.position.x;
+        distanceFromPlayer.y = (garrettInstance.transform.position.y + targetOffset.y) - transform.position.y;
         speedEased += (speed - speedEased) * Time.deltaTime * easing;
         transform.position += speedEased * Time.deltaTime;
 
@@ -71,8 +74,8 @@ public class Flyer : MonoBehaviour
             speed.x = (Mathf.Abs(distanceFromPlayer.x) / distanceFromPlayer.x) * speedMultiplier;
             speed.y = (Mathf.Abs(distanceFromPlayer.y) / distanceFromPlayer.y) * speedMultiplier;
 
-            if (!NewPlayer.Instance.frozen)
-            {
+            //if (!NewPlayer.Instance.frozen)
+           // {
                 if (shootsBomb)
                 {
                     if (bombCounter > bombCounterMax)
@@ -85,16 +88,16 @@ public class Flyer : MonoBehaviour
                         bombCounter += Time.deltaTime;
                     }
                 }
-            }
-            else
-            {
-                speedEased = Vector3.zero;
-            }
+           // }
+           // else
+            //{
+             //   speedEased = Vector3.zero;
+           // }
         }
         else
         {
             speed = Vector2.zero;
-            if (transform.position.y > (NewPlayer.Instance.transform.position.y + targetOffset.y) && sawPlayer)
+            if (transform.position.y > (garrettInstance.transform.position.y + targetOffset.y) && sawPlayer)
             {
                 speed = new Vector2(0f, -.05f);
             }

@@ -123,3 +123,5 @@ MonoBehaviour:
   prefabs:
   - {fileID: 3881067250551108379, guid: 6ec975ede7b58304ea4a097d3863f71a, type: 3}
   - {fileID: 1971082094402896809, guid: 64c3470e0abd98f4ab9f34c4e66fa216, type: 3}
+  camSetter: {fileID: 7597421569246762199, guid: 74786cf9556b36a43a30a2b5de047d33,
+    type: 3}

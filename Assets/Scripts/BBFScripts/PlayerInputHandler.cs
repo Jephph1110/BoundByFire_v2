@@ -12,7 +12,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     [SerializeField]  List<GameObject> prefabs = new List<GameObject>();
 
-    //public GameObject VCam;
+    //public CamSetter camSetter;
+    //public GameObject garrett;
   
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,9 @@ public class PlayerInputHandler : MonoBehaviour
             player = GameObject.Instantiate(prefabs[0], transform.position, transform.rotation).GetComponent<PlayerMovement>(); //spawn garrett
             PIHChecker.isGarettSpawned = true;
 
-            //Transform garrettTransform = player.GetComponent<Transform>();
-            //VCam.GetComponent<CinemachineVirtualCamera>.Follow = garrettTransform;
+            //garrett = player.gameObject;
+
+            //camSetter.garrettInstance = player.gameObject;
         }     
         else
             player = GameObject.Instantiate(prefabs[1], transform.position, transform.rotation).GetComponent<PlayerMovement>(); //spawn Marian
