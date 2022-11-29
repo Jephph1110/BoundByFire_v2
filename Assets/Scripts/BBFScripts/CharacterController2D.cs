@@ -11,6 +11,7 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
+	private PlayerMovement setMovement;
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
@@ -25,9 +26,9 @@ public class CharacterController2D : MonoBehaviour
     public int health;
     public int maxHealth;
     public int maxAmmo;
+	public bool frozen = false;
 
 	[Header ("Properties")]
-	public bool frozen = false;
 	[System.NonSerialized] public bool shooting = false;
 
 	[Header("Events")]
@@ -81,6 +82,16 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 	}
+
+	public void Freeze(bool freeze)
+    {
+        //Set all animator params to ensure the player stops running, jumping, etc and simply stands
+        if (freeze)
+        {
+            // PlayerMovement.Instance.Freeze(true);
+        }
+        frozen = freeze;
+    }
 
 
 	public void Move(float move, bool crouch, bool jump)
@@ -153,18 +164,6 @@ public class CharacterController2D : MonoBehaviour
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 		}
 	}
-
-	public void Freeze(bool freeze)
-    {
-        //Set all animator params to ensure the player stops running, jumping, etc and simply stands
-        if (freeze)
-        {
-            Vector3 targetVelocity = new Vector2(0f, 0f);
-        }
-
-        frozen = freeze;
-        shooting = false;
-    }
 
 	private void Flip()
 	{

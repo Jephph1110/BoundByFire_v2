@@ -15,6 +15,7 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private bool autoHit; //Does the player need to press the interact button, or will it simply fire automatically?
     public bool completed;
     [SerializeField] private bool repeat; //Set to true if the player should be able to talk again and again to the NPC. 
+    [SerializeField] public bool freezeCheck;   
     [SerializeField] private bool sleeping;
 
     [Header ("Dialogue")]
@@ -69,11 +70,13 @@ public class DialogueTrigger : MonoBehaviour
                     }
                 }
                 sleeping = true;
+                freezeCheck = true;
             }
         }
         else
         {
             iconAnimator.SetBool("active", false);
+            freezeCheck = false;
         }
     }
 
