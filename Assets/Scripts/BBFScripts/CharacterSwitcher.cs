@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
 
 public class CharacterSwitcher : MonoBehaviour
 {
-    int index =0;
+   int index =0;
     [SerializeField] List<GameObject> characters = new List<GameObject>();
     PlayerInputManager manager;
 
@@ -22,4 +23,7 @@ public class CharacterSwitcher : MonoBehaviour
     index = 1;
     manager.playerPrefab=characters[1];
    }
-}
+
+  }
+
+  

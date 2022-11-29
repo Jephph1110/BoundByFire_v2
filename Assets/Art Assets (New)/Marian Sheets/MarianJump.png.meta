@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9a2b7a4b51570864f80629ca5e2c332f
+guid: d0aeebc65f4aebf43ad1149c4ecb199e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SwampFly_Attack_0
+      name: MarianJump_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc7ae8b3828f504428b21338705efb44
-      internalID: 1315494862
+      spriteID: 3817a08ff3d5af040a3389883c2b712b
+      internalID: -60891525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SwampFly_Attack_1
+      name: MarianJump_1
       rect:
         serializedVersion: 2
         x: 64
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f44848fdaed8c745bc117b9df491e82
-      internalID: 805444444
+      spriteID: 52941182edccfd84c804c46448d60103
+      internalID: -1344893001
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SwampFly_Attack_2
+      name: MarianJump_2
       rect:
         serializedVersion: 2
         x: 128
@@ -161,8 +161,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b8bfe8485fb56f418c9221a867f7dda
-      internalID: 813207048
+      spriteID: 7b180c9a246e8444e978601d89b4d45e
+      internalID: 797122295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarianJump_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e1e335ddb9909408ea0d6aa486a2e0
+      internalID: -998616688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarianJump_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d05471dfdaa8ab49b7bf0a38a49297b
+      internalID: -2082142586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarianJump_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8cb4f98e5ed5e44897790b96efc8d4
+      internalID: 561039681
       vertices: []
       indices: 
       edges: []
@@ -178,9 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SwampFly_Attack_0: 1315494862
-      SwampFly_Attack_2: 813207048
-      SwampFly_Attack_1: 805444444
+      MarianJump_0: -60891525
+      MarianJump_2: 797122295
+      MarianJump_3: -998616688
+      MarianJump_5: 561039681
+      MarianJump_4: -2082142586
+      MarianJump_1: -1344893001
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

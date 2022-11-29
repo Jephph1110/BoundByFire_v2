@@ -16,16 +16,18 @@ public class PlayerMovement : MonoBehaviour
     private bool jumpedInput = false;
     [SerializeField] private LayerMask platformLayerMask;
 
+    //[SerializeField] InputActionReference jumping;
+
 ///////////////////////////////////////
-    public void OnMove(InputAction.CallbackContext context)
+    public void OnMove(Vector2 context)
     {
-        movementInput = context.ReadValue<Vector2>();
+        movementInput = context;
 
     }
-    public void OnJump(InputAction.CallbackContext context)
+    public void OnJump(bool context)
     {
         //jumped = context.ReadValue<bool>();
-        jumpedInput = context.action.triggered;
+        jumpedInput = context;
 
     }
 ///////////////////////////////////////
