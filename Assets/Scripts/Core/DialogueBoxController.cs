@@ -12,6 +12,7 @@ public class DialogueBoxController : MonoBehaviour
     public Animator animator;
     public AudioSource audioSource;
     public AudioSource dialogueAudioSource;
+    [SerializeField] public Sprite avatarImage;
     [SerializeField] Dialogue dialogue;
     private DialogueTrigger currentDialogueTrigger;
     private GameObject finishTalkingActivateGameObject;
@@ -116,11 +117,12 @@ public class DialogueBoxController : MonoBehaviour
         }
     }
 
-    public void Appear(string fName, string characterName, DialogueTrigger dTrigger, bool useItemAfterClose, AudioClip[] audioL, AudioClip[] audioC, string finishTalkingAnimBool, GameObject finishTalkingActivateGObject, string finishTalkingActivateGOString, bool r)
+    public void Appear(string fName, string characterName, Sprite dialogImage, DialogueTrigger dTrigger, bool useItemAfterClose, AudioClip[] audioL, AudioClip[] audioC, string finishTalkingAnimBool, GameObject finishTalkingActivateGObject, string finishTalkingActivateGOString, bool r)
     {
         repeat = r;
         finishTalkingAnimatorBool = finishTalkingAnimBool;
         finishTalkingActivateGameObject = finishTalkingActivateGObject;
+        avatarImage = dialogImage;
         finishTalkingActivateGameObjectString = finishTalkingActivateGOString;
         dialogueTrigger = dTrigger;
         choice1Mesh.text = "";
@@ -149,7 +151,7 @@ public class DialogueBoxController : MonoBehaviour
 
         animator.SetBool("active", true);
         activated = true;
-        NewPlayer.Instance.Freeze(true);
+        CharacterController2D.Instance.Freeze(true);
         StartCoroutine(Advance());
     }
 
@@ -209,7 +211,7 @@ public class DialogueBoxController : MonoBehaviour
         finishTalkingActivateGameObject = null;
         finishTalkingActivateGameObjectString = "";
         yield return new WaitForSeconds(1f);
-        NewPlayer.Instance.Freeze(false);
+        CharacterController2D.Instance.Freeze(false);
         animator.SetInteger("choiceSelection", 1);
     }
 

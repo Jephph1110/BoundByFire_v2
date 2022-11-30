@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -51,6 +51,11 @@ public class Dialogue : MonoBehaviour
             "After my dialogue completes, I'll take 80 coins, or however many you specify in the inspector...",
             "And I'll also give you a new ability!",
             "In this case, how about a generic DOWNWARD SMASH? Simply attack while pressing down in mid-air!"
+        });
+
+        dialogue.Add("CharacterC", new string[] {
+            "I am a test dialogue",
+            "That's all I have to say"
         });
     }
 }

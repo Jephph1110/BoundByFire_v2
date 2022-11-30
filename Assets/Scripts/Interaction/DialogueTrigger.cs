@@ -15,9 +15,11 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private bool autoHit; //Does the player need to press the interact button, or will it simply fire automatically?
     public bool completed;
     [SerializeField] private bool repeat; //Set to true if the player should be able to talk again and again to the NPC. 
+    [SerializeField] public bool freezeCheck;   
     [SerializeField] private bool sleeping;
 
     [Header ("Dialogue")]
+    [SerializeField] private Sprite avatarImage; //The avatar's image
     [SerializeField] private string characterName; //The character's name shown in the dialogue UI
     [SerializeField] private string dialogueStringA; //The dialogue string that occurs before the fetch quest
     [SerializeField] private string dialogueStringB; //The dialogue string that occurs after fetch quest
@@ -46,21 +48,21 @@ public class DialogueTrigger : MonoBehaviour
             InstantGet();
         }
 
-        if (col.gameObject == NewPlayer.Instance.gameObject && !sleeping && !completed && NewPlayer.Instance.grounded)
+        if (col.gameObject == CharacterController2D.Instance.gameObject && !sleeping && !completed)
         {
             iconAnimator.SetBool("active", true);
             if (autoHit || (Input.GetAxis("Submit") > 0))
             {
                 iconAnimator.SetBool("active", false);
-                if (requiredItem == "" && requiredCoins == 0 || !GameManager.Instance.inventory.ContainsKey(requiredItem) && requiredCoins == 0 || (requiredCoins != 0 && NewPlayer.Instance.coins < requiredCoins))
+                if (requiredItem == "" && requiredCoins == 0 || !GameManager.Instance.inventory.ContainsKey(requiredItem) && requiredCoins == 0 || (requiredCoins != 0 && CharacterController2D.Instance.coins < requiredCoins))
                 {
-                    GameManager.Instance.dialogueBoxController.Appear(dialogueStringA, characterName, this, false, audioLinesA, audioChoices, finishTalkingAnimatorBool, finishTalkingActivateObject, finishTalkingActivateObjectString, repeat);
+                    GameManager.Instance.dialogueBoxController.Appear(dialogueStringA, characterName, avatarImage, this, false, audioLinesA, audioChoices, finishTalkingAnimatorBool, finishTalkingActivateObject, finishTalkingActivateObjectString, repeat);
                 }
-                else if (requiredCoins == 0 && GameManager.Instance.inventory.ContainsKey(requiredItem) || (requiredCoins != 0 && NewPlayer.Instance.coins >= requiredCoins))
+                else if (requiredCoins == 0 && GameManager.Instance.inventory.ContainsKey(requiredItem) || (requiredCoins != 0 && CharacterController2D.Instance.coins >= requiredCoins))
                 {
                     if (dialogueStringB != "")
                     {
-                        GameManager.Instance.dialogueBoxController.Appear(dialogueStringB, characterName, this, true, audioLinesB, audioChoices, "", null, "", repeat);
+                        GameManager.Instance.dialogueBoxController.Appear(dialogueStringB, characterName, avatarImage, this, true, audioLinesB, audioChoices, "", null, "", repeat);
                     }
                     else
                     {
@@ -68,17 +70,19 @@ public class DialogueTrigger : MonoBehaviour
                     }
                 }
                 sleeping = true;
+                freezeCheck = true;
             }
         }
         else
         {
             iconAnimator.SetBool("active", false);
+            freezeCheck = false;
         }
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject == NewPlayer.Instance.gameObject)
+        if (col.gameObject == CharacterController2D.Instance.gameObject)
         {
             iconAnimator.SetBool("active", false);
             sleeping = completed;
@@ -107,7 +111,7 @@ public class DialogueTrigger : MonoBehaviour
             }
             else
             {
-                NewPlayer.Instance.coins -= requiredCoins;
+                CharacterController2D.Instance.coins -= requiredCoins;
             }
 
             repeat = false;
@@ -125,13 +129,13 @@ public class DialogueTrigger : MonoBehaviour
 
             if (getCoinAmount != 0)
             {
-                NewPlayer.Instance.coins += getCoinAmount;
+                CharacterController2D.Instance.coins += getCoinAmount;
             }
 
-            if (getSound != null)
-            {
-                GameManager.Instance.audioSource.PlayOneShot(getSound);
-            }
+            // if (getSound != null)
+            // {
+            //     GameManager.Instance.audioSource.PlayOneShot(getSound);
+            // }
 
             completed = true;
         }
