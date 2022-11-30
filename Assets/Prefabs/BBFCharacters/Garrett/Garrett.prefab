@@ -392,6 +392,12 @@ MonoBehaviour:
   m_CeilingCheck: {fileID: 84635943}
   m_CrouchDisableCollider: {fileID: 0}
   m_Grounded: 0
+  ammo: 0
+  coins: 0
+  health: 0
+  maxHealth: 0
+  maxAmmo: 0
+  frozen: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
