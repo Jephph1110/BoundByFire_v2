@@ -24662,6 +24662,7 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: 7784b97f137244a999da3068a3bd0e9a, type: 3}
   isBomb: 1
   requirePoundAttack: 0
+  garrettInstance: {fileID: 0}
 --- !u!114 &114363754922835764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24674,7 +24675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576f216a31e824683ab398c1beb28e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bomb: {fileID: 0}
+  bomb: {fileID: 1603911178760526}
   rayCastWidth: 5
   rayCastOffsetY: 1
   layerMask:

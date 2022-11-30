@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7275763185042861880}
   - component: {fileID: 7275763185042861887}
   - component: {fileID: 7275763185042861883}
+  - component: {fileID: 2019061106}
   m_Layer: 12
   m_Name: SwampMonster
   m_TagString: Untagged
@@ -181,12 +182,37 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 257
-  jumpHeight: 20
+  jumpHeight: 15
   groundCheck: {fileID: 7275763184279421112}
-  boxSize: {x: 1.973195, y: 0.23}
-  lineofSight: {x: 16.84, y: 2}
+  boxSize: {x: 1.99, y: 0.81}
+  lineofSight: {x: 16.84, y: 1.97}
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
   player: {fileID: 0}
   garrettInstance: {fileID: 0}
+  canSeePlayer: 0
+  isgrounded: 0
+  enemyRB: {fileID: 2019061106}
+  enemyAnim: {fileID: 7275763185042861881}
+--- !u!50 &2019061106
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7275763185042861886}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 2
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

@@ -20,7 +20,7 @@ public class JumpAttacker : MonoBehaviour
     [SerializeField] private bool canSeePlayer;
     [SerializeField] private bool isgrounded;
 
-    private Rigidbody2D enemyRB;
+    [SerializeField] private Rigidbody2D enemyRB;
     [SerializeField] private Animator enemyAnim;
 
     // Start is called before the first frame update
@@ -29,8 +29,11 @@ public class JumpAttacker : MonoBehaviour
         garrettInstance = GameObject.Find("Garrett(Clone)");
         player=garrettInstance.transform;
 
-        enemyRB = GetComponent<Rigidbody2D>();
+        //enemyRB = GetComponent<Rigidbody2D>();
         //enemyAnim = GetComponent<Animator>();
+
+        //isgrounded = true;
+        //canSeePlayer = false;
         
     }
 
@@ -46,6 +49,13 @@ public class JumpAttacker : MonoBehaviour
         AnimationController();
 
         //FlipTowardsPlayer();
+
+        /*if(canSeePlayer && isgrounded)
+        {
+            FlipTowardsPlayer();
+            JumpAttack();
+        }*/
+
 
     }
 

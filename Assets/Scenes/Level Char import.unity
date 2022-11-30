@@ -24061,12 +24061,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4700c4d848a34f9484a886485f7a908, type: 3}
---- !u!95 &2019061101 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7275763185042861881, guid: 67f2a9c460ea053498a046061e713f86,
-    type: 3}
-  m_PrefabInstance: {fileID: 7275763183292269140}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2022911282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46315,11 +46309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4569125025086690, guid: 927e473a2ba484d75b382fc1faaf0eeb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -44.532875
+      value: -33.31765
       objectReference: {fileID: 0}
     - target: {fileID: 4569125025086690, guid: 927e473a2ba484d75b382fc1faaf0eeb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -34.850304
+      value: -34.657455
       objectReference: {fileID: 0}
     - target: {fileID: 4569125025086690, guid: 927e473a2ba484d75b382fc1faaf0eeb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -46633,19 +46627,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7275763185042861883, guid: 67f2a9c460ea053498a046061e713f86,
         type: 3}
-      propertyPath: boxSize.x
-      value: 1.99
+      propertyPath: jumpHeight
+      value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 7275763185042861883, guid: 67f2a9c460ea053498a046061e713f86,
-        type: 3}
-      propertyPath: boxSize.y
-      value: 0.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 7275763185042861883, guid: 67f2a9c460ea053498a046061e713f86,
-        type: 3}
-      propertyPath: enemyAnim
-      value: 
-      objectReference: {fileID: 2019061101}
     - target: {fileID: 7275763185042861886, guid: 67f2a9c460ea053498a046061e713f86,
         type: 3}
       propertyPath: m_Name
