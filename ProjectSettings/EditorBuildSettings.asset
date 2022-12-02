@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_Char_import_1.unity
     guid: dccedebad3f18124a8dc1b7c59c1263f
+  - enabled: 1
+    path: Assets/Scenes/Outskirts.unity
+    guid: a548fdca7a49c794faffb6a874ad987b
   m_configObjects: {}
